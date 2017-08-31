@@ -3,11 +3,8 @@ package io.vertx.first;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 
-import java.util.logging.Logger;
-
 public class MyFirstVerticle extends AbstractVerticle {
 
-    private static final Logger LOG = Logger.getLogger(MyFirstVerticle.class.getName());
     private static final String PATH_FIRST_CONFIG = "src/main/resources/config/first-config.yml";
 
     @Override
