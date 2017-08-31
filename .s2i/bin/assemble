@@ -6,10 +6,10 @@ chmod 755 /home/jboss
 
 mkdir -p /deployments/src/main/resources/config
 
-cp -f /tmp/src/main/resources/config/first-config.yml /deployments/src/main/resources/config/
+cp -f /tmp/src/src/main/resources/config/first-config.yml /deployments/src/main/resources/config/
 
 mkdir -p /deployments/src/main/resources/config/second
 
-cp -f /tmp/src/main/resources/config/second/second-config.yml /deployments/src/main/resources/config/second
+cp -f /tmp/src/src/main/resources/config/second/second-config.yml /deployments/src/main/resources/config/second
 
 exit $rc
