@@ -1,0 +1,11 @@
+#!/bin/bash
+
+chmod 755 /home/jboss
+
+/usr/local/s2i/assemble rc=$?
+
+mkdir -p /deployments/src/main/resources/config
+cp -f /src/main/resources/config/first-config.yml /deployments/src/main/resources/config
+cp -f /src/main/resources/config/second/second-config.yml /deployments/src/main/resources/config/second
+
+exit $rc
