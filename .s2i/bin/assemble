@@ -1,15 +1,20 @@
 #!/bin/bash
 
+# при билде валится ошибка 'access denied', поэтому даем соотв. права
 chmod 755 /home/jboss
 
+# вызываем оригинальный скрипт, который собирает проект
 /usr/local/s2i/assemble rc=$?
 
+# создаем каталог, в котором будет храниться конфиг
 mkdir -p /deployments/src/main/resources/config
 
+# копируем конфиг из дерева исходников, в папку, где приложение будет искать конфиг
 cp -f /tmp/src/src/main/resources/config/first-config.yml /deployments/src/main/resources/config/
 
 mkdir -p /deployments/src/main/resources/config/second
 
 cp -f /tmp/src/src/main/resources/config/second/second-config.yml /deployments/src/main/resources/config/second
 
+# возвращаем код завершения скрипта сборки
 exit $rc
